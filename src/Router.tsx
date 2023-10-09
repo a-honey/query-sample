@@ -1,15 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import LandingPage2 from "./pages/LandingPage2";
-import LandingPage3 from "./pages/LandingPage3";
+import GetQueryPage from "./pages/GetQueryPage";
+import GetQueriesPage from "./pages/GetQueriesPage";
+import MutationPage from "./pages/MutationPage";
+import InfiniteQueryPage from "./pages/InfiniteQueryPage";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/2" element={<LandingPage2 />} />
-        <Route path="/3" element={<LandingPage3 />} />
+        <Route path="/" element={<GetQueryPage />} />
+        <Route path="/2" element={<GetQueriesPage />} />
+        <Route path="/3" element={<MutationPage />} />
+        <Route path="/4" element={<InfiniteQueryPage />} />
       </Routes>
     </BrowserRouter>
   );

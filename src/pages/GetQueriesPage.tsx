@@ -4,14 +4,14 @@ import {
   useGetMapQueries,
 } from "../hooks/queries/useGetInitCalling";
 
-// import useGetTodo from "../hooks/queries/useGetTodo";
-// import useGetUserInfo from "../hooks/queries/useGetUserInfo";
+import useGetTodo from "../hooks/queries/useGetTodo";
+import useGetUserInfo from "../hooks/queries/useGetUserInfo";
 
-export default function LandingPage3() {
-  //   const [count] = useState(1);
+export default function GetQueriesPage() {
+  const [count] = useState(1);
 
-  //   const { data: todoData } = useGetTodo({ todoId: count });
-  //   const { data: userInfoData } = useGetUserInfo({ userId: count });
+  const { data: todoData } = useGetTodo({ todoId: count });
+  const { data: userInfoData } = useGetUserInfo({ userId: count });
 
   // const [
   //   {

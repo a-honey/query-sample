@@ -5,7 +5,7 @@ import useGetTodo from "../hooks/queries/useGetTodo";
  *
  * @returns isSuccess, isLoading에 대한 잘못된 오해 바로잡기.
  */
-export default function LandingPage() {
+export default function GetQueryPage() {
   const [count, setCount] = useState(1);
   const { data, isSuccess, isLoading, isFetching, isError } = useGetTodo({
     todoId: count,

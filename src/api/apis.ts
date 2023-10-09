@@ -1,9 +1,14 @@
+interface MockReqResObject {
+  id: number;
+  msg: string;
+}
+
 const getSomething = () => {
   return fetch("/something", { method: "GET" });
 };
 
 const getTodo = ({ todoId }: { todoId: number }) => {
-  return new Promise<{ id: number; msg: string }>((resolve) =>
+  return new Promise<MockReqResObject>((resolve) =>
     setTimeout(() => {
       resolve({
         id: todoId,
@@ -14,7 +19,7 @@ const getTodo = ({ todoId }: { todoId: number }) => {
 };
 
 const getUserInfo = ({ userId }: { userId: number }) => {
-  return new Promise<{ id: number; msg: string }>((resolve) =>
+  return new Promise<MockReqResObject>((resolve) =>
     setTimeout(() => {
       resolve({
         id: userId,
@@ -24,8 +29,8 @@ const getUserInfo = ({ userId }: { userId: number }) => {
   );
 };
 
-const postTodo = ({ body }: { body: any }) => {
-  return new Promise<{ id: number; msg: string }>((resolve) =>
+const postTodo = ({ body }: { body: MockReqResObject }) => {
+  return new Promise<MockReqResObject>((resolve) =>
     setTimeout(() => {
       resolve({
         ...body,

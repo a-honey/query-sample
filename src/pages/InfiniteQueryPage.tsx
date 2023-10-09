@@ -1,6 +1,6 @@
 import useGetTodos from "../hooks/queries/useGetTodos";
 
-export default function LandingPage() {
+export default function InfiniteQueryPage() {
   const {
     data,
     fetchNextPage,
