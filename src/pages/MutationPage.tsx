@@ -35,38 +35,6 @@ export default function MutationPage() {
       }
     );
 
-    mutate(
-      { body: { id: 50, msg: "123123" } },
-      {
-        onSuccess: (res) => {
-          console.log("success!");
-          console.log(res);
-        },
-        onError: (err) => {
-          console.log("catch!");
-        },
-        onSettled: () => {
-          console.log("finally!");
-        },
-      }
-    );
-
-    mutate(
-      { body: { id: 684, msg: "531241" } },
-      {
-        onSuccess: (res) => {
-          console.log("success!");
-          console.log(res);
-        },
-        onError: (err) => {
-          console.log("catch!");
-        },
-        onSettled: () => {
-          console.log("finally!");
-        },
-      }
-    );
-
     mutateAsync(
       { body: MOCK_MUTATE_OBJECT },
       {
