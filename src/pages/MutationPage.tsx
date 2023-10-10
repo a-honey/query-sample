@@ -20,6 +20,7 @@ export default function MutationPage() {
 
   const handleMutation = () => {
     mutate(
+      // 캐시된 데이터를 업데이트하고 비동기 작업을 실행
       { body: MOCK_MUTATE_OBJECT },
       {
         onSuccess: (res) => {
@@ -36,6 +37,7 @@ export default function MutationPage() {
     );
 
     mutateAsync(
+      // 더 많은 제어와 오류 처리 필요시
       { body: MOCK_MUTATE_OBJECT },
       {
         onSuccess: (res) => {
