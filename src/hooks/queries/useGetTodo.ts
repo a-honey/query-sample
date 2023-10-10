@@ -14,9 +14,9 @@ export default function useGetTodo({ todoId }: { todoId: number }) {
     // 쿼리키가 변경되었을 때, 이전 쿼리키의 값을 유지할 것인가?에 대한 여부. 기본 값 false
     keepPreviousData: false,
     // 캐시된 값을 사용하는 것이 아닌, 네트워크 호출을 통해 서버로부터 데이터를 가져올 것인가? 에 대한 타이밍. 기본 값 0
-    staleTime: 0,
+    // staleTime: 0,
     // 캐시된 값을 얼마나 보존시킬 것인가? 에 대한 플래그. 기본값은 5분.
-    cacheTime: 0,
+    // cacheTime: 0,
     meta: {
       errorMessage: `useGetTodo ${todoId}번 호출에서 오류가 발생했습니다.`,
     },
