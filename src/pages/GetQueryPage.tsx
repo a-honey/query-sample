@@ -11,6 +11,10 @@ export default function GetQueryPage() {
     todoId: count,
   });
 
+  // isSuccess: 해당 쿼리키가 캐시 데이터를 가지고 있느냐, 해당 쿼리키가 호출된 적이 있나? 만료전에 호출되면 이미 true
+  // isLoading: 캐시 데이터가 없고, 최초 캐시 데이터를 받아오는 중인가
+  // isFetching: api가 호출되고 있는 중인가(pending)
+
   const handleCount = ({ vector }: { vector: "PLUS" | "MINUS" }) => {
     setCount((prev) => prev + 1 * (vector === "PLUS" ? 1 : -1));
   };
