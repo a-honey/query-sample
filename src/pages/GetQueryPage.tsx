@@ -1,5 +1,5 @@
-import { useState } from "react";
 import useGetTodo from "../hooks/queries/useGetTodo";
+import { useState } from "react";
 
 /**
  *
@@ -7,7 +7,15 @@ import useGetTodo from "../hooks/queries/useGetTodo";
  */
 export default function GetQueryPage() {
   const [count, setCount] = useState(1);
-  const { data, isSuccess, isLoading, isFetching, isError } = useGetTodo({
+  const {
+    data,
+    isSuccess,
+    isLoading,
+    isRefetching,
+    isFetching,
+    isError,
+    refetch,
+  } = useGetTodo({
     todoId: count,
   });
 
@@ -27,9 +35,18 @@ export default function GetQueryPage() {
       <div style={{ fontSize: "60px" }}>
         <div>isSuccess :: {JSON.stringify(isSuccess)}</div>
         <div>isLoading :: {JSON.stringify(isLoading)}</div>
+        <div>isFetching :: {JSON.stringify(isFetching)}</div>
+        <div>isRefetching :: {JSON.stringify(isRefetching)}</div>
       </div>
       <button onClick={() => handleCount({ vector: "PLUS" })}>더하기!</button>
       <button onClick={() => handleCount({ vector: "MINUS" })}>빼기!</button>
+      <button
+        onClick={() => {
+          refetch();
+        }}
+      >
+        refetch!
+      </button>
       <div>{data ? "데이터가 있어요!" : "데이터가 없어요!"}</div>
       <div>{isGetTodoFetched ? "호출 성공!" : "호출 중이거나 호출 오류"}</div>
       <div>{isFetching ? "호출 중..." : "호출 완료"}</div>
